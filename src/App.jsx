@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const [copyText, setCopyText] = useState("Copiar");
-  const [password, setpassword] = useState("Teste");
+  const [password, setpassword] = useState("");
   function generate() {
     const characters =
       "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?";
@@ -21,11 +21,13 @@ function App() {
   }
   return (
     <>
-      <div>
+      <div className="container">
         <h1>Gerador de senha</h1>
         <button onClick={generate}>Gerar</button>
-        <button onClick={copiar}>{copyText}</button>
-        <div className="Divsenha">{password}</div>
+        <button className="btn2" onClick={copiar}>
+          {copyText}
+        </button>
+        <div>{password}</div>
       </div>
     </>
   );
