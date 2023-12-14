@@ -5,7 +5,14 @@ function App() {
   const [copyText, setCopyText] = useState("Copiar");
   const [password, setpassword] = useState("Teste");
   function generate() {
-    //Criar uma forma de criar uma senha aleatória
+    const characters =
+      "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?";
+    let newsenha = "";
+    for (let i = 0; i < 12; i++) {
+      const position = Math.floor(Math.random() * characters.length);
+      newsenha += characters[position];
+    }
+    setpassword(newsenha);
     setCopyText("Copiar");
   }
   function copiar() {
