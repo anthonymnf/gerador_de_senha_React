@@ -38,7 +38,10 @@ function App() {
         <button className="btn2" onClick={copiar}>
           {copyText}
         </button>
-        <div>Sua senha segura: {password}</div>
+        <div className="divsenha">
+          <b>Sua senha segura: </b>
+          {password}
+        </div>
       </div>
     </>
   );
