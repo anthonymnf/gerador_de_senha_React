@@ -1,15 +1,16 @@
 import { useState } from "react";
 import "./App.css";
+import InputTamanho from "./Components/InputTamanho";
 
 function App() {
   const [copyText, setCopyText] = useState("Copiar");
   const [password, setpassword] = useState("");
-  const [passwordSize, setpasswordSize] = useState("12");
+  const [customPasswordSize, setcustomPasswordSize] = useState("12");
   function generate() {
     const characters =
       "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?";
     let newsenha = "";
-    for (let i = 0; i < passwordSize; i++) {
+    for (let i = 0; i < customPasswordSize; i++) {
       const position = Math.floor(Math.random() * characters.length);
       newsenha += characters[position];
     }
@@ -24,16 +25,10 @@ function App() {
     <>
       <div className="container">
         <h1>Gerador de senha</h1>
-        <div>
-          <label htmlFor="passwordSize">Tamanho: </label>
-          <input
-            type="number"
-            id="passwordSize"
-            min={1}
-            value={passwordSize}
-            onChange={(ev) => setpasswordSize(ev.target.value)}
-          />
-        </div>
+        <InputTamanho
+          passwordSize={customPasswordSize}
+          setpasswordSize={setcustomPasswordSize}
+        />
         <button onClick={generate}>Gerar</button>
         <button className="btn2" onClick={copiar}>
           {copyText}
