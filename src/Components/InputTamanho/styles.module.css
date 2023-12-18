@@ -1,0 +1,11 @@
+.InputNumber {
+  border: 0;
+  background: #01a5b1;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.5rem;
+  width: 5rem;
+  margin-top: 1rem;
+}
